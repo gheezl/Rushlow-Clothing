@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react';
+import { withRouter } from "react-router-dom"
 import "./menu-item.scss"
 
 
-const MenuItem = ({ title, image, size }) => (
+const MenuItem = ({ title, image, size, history }) => (
     <Fragment>
         <div
+            onClick={() => history.push()}
             className={`${size} menu-item`}
             style={{
                 backgroundImage: `url(${image})`
@@ -21,4 +23,4 @@ const MenuItem = ({ title, image, size }) => (
     </Fragment >
 )
 
-export default MenuItem;
+export default withRouter(MenuItem);

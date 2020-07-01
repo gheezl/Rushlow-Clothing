@@ -55,6 +55,7 @@ class Directory extends Component {
                             title={section.title}
                             id={section.id}
                             size={section.size}
+                            linkUrl={section.linkUrl}
                         />
                     ))}
                 </div>
