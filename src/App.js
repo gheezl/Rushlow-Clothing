@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
-import HomePage from "./components/homepage/homepage.jsx"
+import HomePage from "./pages/homepage/homepage.jsx"
 
 class App extends Component {
   constructor() {
