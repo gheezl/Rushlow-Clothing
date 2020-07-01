@@ -3,14 +3,15 @@ import { withRouter } from "react-router-dom"
 import "./menu-item.scss"
 
 
-const MenuItem = ({ title, image, size, history }) => (
+const MenuItem = ({ title, image, size, history, linkUrl, match }) => (
     <Fragment>
         <div
-            onClick={() => history.push()}
+            onClick={() => history.push(`${match.url}${linkUrl}`)}
             className={`${size} menu-item`}
             style={{
                 backgroundImage: `url(${image})`
-            }}>
+            }}
+        >
             <div className="content">
                 <h1 className="title">
                     {title.toUpperCase()}
