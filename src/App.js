@@ -1,18 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
-import HomePage from "./pages/homepage/homepage.jsx"
+import HomePage from "./pages/homepage/homepage.jsx";
+import Shop from "./pages/shop/shop.jsx";
 import { Route, Switch, Link } from "react-router-dom";
 
-const HatsPage = (props) => {
-  console.log(props)
-  return (
-    <div>
-      <h1>
-        Hats
-    </h1>
-    </div>
-  )
-}
 
 class App extends Component {
   constructor() {
@@ -28,7 +19,7 @@ class App extends Component {
       <Fragment>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop/hats" component={HatsPage} />
+          <Route exact path="/shop" component={Shop} />
         </Switch>
       </Fragment>
     )
