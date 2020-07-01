@@ -5,11 +5,10 @@ import "./menu-item.scss"
 const MenuItem = ({ title, image, size }) => (
     <Fragment>
         <div
+            className={`${size} menu-item`}
             style={{
                 backgroundImage: `url(${image})`
-            }}
-            className={`${size} menu-item`}
-        >
+            }}>
             <div className="content">
                 <h1 className="title">
                     {title.toUpperCase()}

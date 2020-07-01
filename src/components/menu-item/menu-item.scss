@@ -10,6 +10,17 @@
   background-position: center;
   background-size: cover;
 
+  &:hover {
+  cursor: pointer;
+
+  & .content {
+    transform: scale(1.25);
+    transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    opacity: 1;
+  }
+}
+
+
   &.large {
     height: 450px;
   }
@@ -32,6 +43,7 @@
     border: 1px solid black;
     background-color: white;
     opacity: 0.5;
+    position: absolute;
 
     .title {
       font-weight: bold;
