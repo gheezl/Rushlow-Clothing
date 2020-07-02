@@ -1,4 +1,7 @@
 import React, { Component, Fragment } from "react"
+
+import FormInput from "../form-input/form-input.jsx"
+
 import "./sign-in.scss"
 
 
@@ -12,24 +15,46 @@ class SignIn extends Component {
         }
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+
+        this.setState({
+            email: "",
+            password: ""
+        })
+    }
+
+    handleChange = (event) => {
+        const { value, name } = event.target
+
+        this.setState({ [name]: value })
+    }
 
     render() {
         return (
             <Fragment>
                 <div className="sign-in">
                     <h2> I already have an account</h2>
-                    <span>Sign in with your email and password</span>
+                    <p>Sign in with your email and password</p>
 
-                    <from>
-                        <input name="email" value={this.state.email} required />
-                        <label>Email</label>
-                        <input name="password" type="password" value={this.state.password} />
-                        <label>Password</label>
-
+                    <from onSubmit={this.handleSubmit} >
+                        <FormInput
+                            name="email"
+                            value={this.state.email}
+                            required
+                            handleChange={this.handleChange}
+                        />
+                        <FormInput
+                            name="password"
+                            type="password"
+                            value={this.state.password}
+                            required
+                            handleChange={this.handleChange}
+                        />
                         <input type="submit" />
                     </from>
                 </div>
-            </Fragment>
+            </Fragment >
         )
     }
 }

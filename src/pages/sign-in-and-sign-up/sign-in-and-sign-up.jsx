@@ -7,7 +7,9 @@ import SignIn from "../../components/sign-in/sign-in.jsx"
 const SignInAndSignUpPage = () => {
     return (
         <Fragment>
-            <SignIn />
+            <div className="sign-in-and-sign-up" >
+                <SignIn />
+            </div>
         </Fragment>
     )
 }
