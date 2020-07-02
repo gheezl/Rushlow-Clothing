@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import CollectionPreview from "../../components/preview-collection/collection-preview.jsx"
+import CollectionPreview from "../../components/collection-preview/collection-preview.jsx"
 import SHOP_DATA from "./shop-data.jsx"
 
 
