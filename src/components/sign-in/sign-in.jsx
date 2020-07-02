@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react"
 
 import FormInput from "../form-input/form-input.jsx"
+import CustomButton from "../custom-button/custom-button.jsx"
 
 import "./sign-in.scss"
 
@@ -51,7 +52,7 @@ class SignIn extends Component {
                             required
                             handleChange={this.handleChange}
                         />
-                        <input type="submit" />
+                        <CustomButton type="submit" > Sign In </CustomButton>
                     </from>
                 </div>
             </Fragment >

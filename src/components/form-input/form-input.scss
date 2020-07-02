@@ -1,8 +1,13 @@
 .form-input {
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: solid black 1px ;
+    background-color: whitesmoke;
+    width: 15vw;
+    transition: width 1s, height 1s;
 }
 
 .form-input:hover {
-    background-color: whitesmoke;
+    width: 20vw;
 }
