@@ -3,6 +3,8 @@ import React, { Component, Fragment } from "react"
 import FormInput from "../form-input/form-input.jsx"
 import CustomButton from "../custom-button/custom-button.jsx"
 
+import { signInWithGoogle } from "../../firebase/firebase.js"
+
 import "./sign-in.scss"
 
 
@@ -52,7 +54,8 @@ class SignIn extends Component {
                             required
                             handleChange={this.handleChange}
                         />
-                        <CustomButton type="submit" > Sign In </CustomButton>
+                        <CustomButton type="submit" > Sign In </CustomButton> <br />
+                        <CustomButton onClick={signInWithGoogle} > Sign In With Google </CustomButton>
                     </from>
                 </div>
             </Fragment >
