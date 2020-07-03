@@ -37,7 +37,7 @@ class App extends Component {
         })
       }
       else {
-        this.setState({ currentUser: userAuth }, () => console.log(userAuth))
+        this.setState({ currentUser: userAuth }, () => console.log(this.state))
       }
     })
   }
