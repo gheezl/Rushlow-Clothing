@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react"
 import FormInput from "../form-input/form-input.jsx"
 import CustomButton from "../custom-button/custom-button.jsx"
 
-import { signInWithGoogle } from "../../firebase/firebase.js"
+import { auth, signInWithGoogle } from "../../firebase/firebase.js"
 
 import "./sign-in.scss"
 
@@ -19,20 +19,29 @@ class SignIn extends Component {
     }
 
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault()
+        console.log("hi")
 
-        this.setState({
-            email: "",
-            password: ""
-        })
+        const { Email, Password } = this.state
+
+        try {
+            await auth.signInWithEmailAndPassword(Email, Password);
+            this.setState({
+                Email: "",
+                Password: ""
+            }, () => console.log(this.state))
+        }
+        catch (error) {
+            console.log(error)
+        }
     }
 
 
     handleChange = (event) => {
-        const { value, placeholder } = event.target
+        const { value, id } = event.target
 
-        this.setState({ [placeholder]: value })
+        this.setState({ [id]: value }, () => console.log(this.state))
     }
 
 
@@ -45,23 +54,25 @@ class SignIn extends Component {
 
                     <from onSubmit={this.handleSubmit} >
                         <FormInput
+                            id="Email"
                             name="Email"
                             value={this.state.email}
                             required
                             onChange={this.handleChange}
                         />
                         <FormInput
+                            id="Password"
                             name="Password"
                             type="password"
                             value={this.state.password}
                             required
                             onChange={this.handleChange}
                         />
-                        <div className="button">
+                        <button type="submit">HI</button>
+                        <div className="button" >
                             <CustomButton type="submit" > Sign In </CustomButton>
                             <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Sign In With Google </CustomButton>
                         </div>
-
                     </from>
                 </div>
             </Fragment >
