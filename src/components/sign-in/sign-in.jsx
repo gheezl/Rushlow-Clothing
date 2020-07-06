@@ -21,7 +21,6 @@ class SignIn extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault()
-        console.log("hi")
 
         const { Email, Password } = this.state
 
@@ -52,7 +51,7 @@ class SignIn extends Component {
                     <h2> I already have an account</h2>
                     <p>Sign in with your email and password</p>
 
-                    <from onSubmit={this.handleSubmit} >
+                    <form onSubmit={this.handleSubmit} >
                         <FormInput
                             id="Email"
                             name="Email"
@@ -68,12 +67,11 @@ class SignIn extends Component {
                             required
                             onChange={this.handleChange}
                         />
-                        <button type="submit">HI</button>
                         <div className="button" >
                             <CustomButton type="submit" > Sign In </CustomButton>
                             <CustomButton onClick={signInWithGoogle} isGoogleSignIn> Sign In With Google </CustomButton>
                         </div>
-                    </from>
+                    </form>
                 </div>
             </Fragment >
         )

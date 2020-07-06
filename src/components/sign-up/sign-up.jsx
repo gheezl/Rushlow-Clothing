@@ -21,7 +21,7 @@ class SignUp extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
 
-        const { DisplayName, Email, Password, ConfirmPassword } = this.state
+        const { displayName, Email, Password, ConfirmPassword } = this.state
 
         if (Password !== ConfirmPassword) {
             alert("Your passwords do not match. Please try again.")
@@ -36,7 +36,7 @@ class SignUp extends Component {
 
                 console.log(user)
 
-                await createUserProfileDocument(user, { DisplayName })
+                await createUserProfileDocument(user, { displayName })
 
                 this.setState({
 
@@ -63,7 +63,7 @@ class SignUp extends Component {
 
                     <form className="sign-up-form" onSubmit={this.handleSubmit} >
                         <FormInput
-                            id="DisplayName"
+                            id="displayName"
                             type="text"
                             name="Display Name"
                             value={displayName}
