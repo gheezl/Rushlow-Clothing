@@ -14,47 +14,44 @@ class SignUp extends Component {
         super()
 
         this.state = {
-            displayName: '',
-            email: '',
-            password: '',
-            confirmPassword: ''
+
         }
     }
 
     handleSubmit = async (event) => {
         event.preventDefault();
 
-        const { displayName, email, password, confirmPassword } = this.state
+        const { DisplayName, Email, Password, ConfirmPassword } = this.state
 
-        if (password !== confirmPassword) {
-            alert("passwords don't match")
+        if (Password !== ConfirmPassword) {
+            alert("Your passwords do not match. Please try again.")
             return
         }
+        else {
+            try {
+                const { user } = await auth.createUserWithEmailAndPassword(
+                    Email,
+                    Password,
+                )
 
-        try {
-            const { user } = await auth.createUserWithEmailAndPassword(
-                email,
-                password
-            )
+                console.log(user)
 
-            await createUserProfileDocument(user, { displayName })
+                await createUserProfileDocument(user, { DisplayName })
 
-            this.setState({
-                displayName: '',
-                email: '',
-                password: '',
-                confirmPassword: ''
-            })
-        }
-        catch (error) {
-            console.log(error);
+                this.setState({
+
+                }, () => console.log(this.state))
+            }
+            catch (error) {
+                console.log(error);
+            }
         }
     }
 
     handleChange = (event) => {
-        const { name, value } = event.target;
+        const { id, value } = event.target;
 
-        this.setState({ [name]: value })
+        this.setState({ [id]: value }, () => console.log(this.state))
     }
 
     render() {
@@ -66,32 +63,36 @@ class SignUp extends Component {
 
                     <form className="sign-up-form" onSubmit={this.handleSubmit} >
                         <FormInput
+                            id="DisplayName"
                             type="text"
-                            name="displayname"
+                            name="Display Name"
                             value={displayName}
                             onChange={this.handleChange}
                             required
                         />
 
                         <FormInput
+                            id="Email"
                             type="email"
-                            name="email"
+                            name="Email"
                             value={email}
                             onChange={this.handleChange}
                             required
                         />
 
                         <FormInput
+                            id="Password"
                             type="password"
-                            name="password"
+                            name="Password"
                             value={password}
                             onChange={this.handleChange}
                             required
                         />
 
                         <FormInput
+                            id="ConfirmPassword"
                             type="password"
-                            name="confirmPassword"
+                            name="Confirm Password"
                             value={confirmPassword}
                             onChange={this.handleChange}
                             required

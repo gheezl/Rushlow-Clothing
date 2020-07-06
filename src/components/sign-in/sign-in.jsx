@@ -13,8 +13,8 @@ class SignIn extends Component {
         super();
 
         this.state = {
-            email: "",
-            password: ""
+            Email: "",
+            Password: ""
         }
     }
 
@@ -30,9 +30,9 @@ class SignIn extends Component {
 
 
     handleChange = (event) => {
-        const { value, name } = event.target
+        const { value, placeholder } = event.target
 
-        this.setState({ [name]: value })
+        this.setState({ [placeholder]: value })
     }
 
 
@@ -45,17 +45,17 @@ class SignIn extends Component {
 
                     <from onSubmit={this.handleSubmit} >
                         <FormInput
-                            name="email"
+                            name="Email"
                             value={this.state.email}
                             required
-                            handleChange={this.handleChange}
+                            onChange={this.handleChange}
                         />
                         <FormInput
-                            name="password"
+                            name="Password"
                             type="password"
                             value={this.state.password}
                             required
-                            handleChange={this.handleChange}
+                            onChange={this.handleChange}
                         />
                         <div className="button">
                             <CustomButton type="submit" > Sign In </CustomButton>

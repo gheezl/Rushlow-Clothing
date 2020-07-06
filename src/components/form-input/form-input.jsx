@@ -2,11 +2,11 @@ import React, { Fragment } from "react"
 
 import "./form-input.scss"
 
-const FormInput = ({ handleChange, ...otherProps }) => {
+const FormInput = ({ onChange, ...otherProps }) => {
     return (
         <Fragment>
             <div>
-                <input placeholder={otherProps.name} className="form-input" onChange={handleChange} {...otherProps} />
+                <input id={otherProps.id} type={otherProps.type} placeholder={otherProps.name} className="form-input" onChange={onChange} />
             </div>
         </Fragment>
     )
