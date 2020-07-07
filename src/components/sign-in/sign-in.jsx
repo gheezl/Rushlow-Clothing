@@ -32,7 +32,7 @@ class SignIn extends Component {
             }, () => console.log(this.state))
         }
         catch (error) {
-            console.log(error)
+            alert(error.message)
         }
     }
 
