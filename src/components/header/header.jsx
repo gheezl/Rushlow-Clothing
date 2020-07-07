@@ -5,8 +5,10 @@ import { ReactComponent as Logo } from "../../assets/crown.svg"
 import { auth } from "../../firebase/firebase.js"
 import { connect } from "react-redux"
 
-import "./header.scss";
+import CartIcon from "../cart-icon/cart-icon.jsx"
+import CartDropdown from "../cart-dropdown/cart-dropdown.jsx"
 
+import "./header.scss";
 
 const Header = ({ currentUser }) => {
     return (
@@ -29,6 +31,8 @@ const Header = ({ currentUser }) => {
                             :
                             <Link className="option" to="/signin">SIGN IN</Link>
                     }
+                    <CartIcon />
+                    <CartDropdown />
                 </div>
             </div>
         </Fragment>
