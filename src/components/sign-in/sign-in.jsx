@@ -29,7 +29,7 @@ class SignIn extends Component {
             this.setState({
                 Email: "",
                 Password: ""
-            }, () => console.log(this.state))
+            })
         }
         catch (error) {
             alert(error.message)
@@ -40,7 +40,7 @@ class SignIn extends Component {
     handleChange = (event) => {
         const { value, id } = event.target
 
-        this.setState({ [id]: value }, () => console.log(this.state))
+        this.setState({ [id]: value })
     }
 
 

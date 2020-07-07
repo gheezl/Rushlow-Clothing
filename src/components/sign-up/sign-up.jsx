@@ -40,7 +40,7 @@ class SignUp extends Component {
 
                 this.setState({
 
-                }, () => console.log(this.state))
+                })
             }
             catch (error) {
                 alert(error.message)
@@ -51,7 +51,7 @@ class SignUp extends Component {
     handleChange = (event) => {
         const { id, value } = event.target;
 
-        this.setState({ [id]: value }, () => console.log(this.state))
+        this.setState({ [id]: value })
     }
 
     render() {
