@@ -5,14 +5,16 @@ import "./cart-dropdown.scss"
 
 import CustomButton from "../custom-button/custom-button.jsx"
 import CartItem from "../cart-item/cart-item.jsx"
+import selectCartItems from "../../redux/cart/cart.selectors.js"
+import selectCartItemsCount from "../../redux/cart/cart.selectors.js";
 
-const CartDropdown = ({ cart }) => {
+const CartDropdown = ({ cartItems }) => {
     return (
         <Fragment>
             <div className="cart-dropdown" >
                 <div className="cart-items" >
                     {
-                        cart.map(cartItem =>
+                        cartItems.map(cartItem =>
                             <CartItem item={cartItem} />
                         )
                     }
@@ -24,7 +26,7 @@ const CartDropdown = ({ cart }) => {
 }
 
 const mapStateToProps = ({ cart }) => ({
-    cart: cart.cartItems
+    cartItems: cart.cartItems
 })
 
 
