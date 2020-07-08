@@ -1,10 +1,14 @@
 import React, { Fragment } from "react"
+import { connect } from "react-redux"
+import { addItem } from "../../redux/cart/cart.actions.js"
+
 import "./collection-item.scss"
 
 import CustomButton from "../custom-button/custom-button.jsx"
 
 
-const CollectionItem = ({ id, name, price, imageUrl }) => {
+const CollectionItem = ({ item, addItem }) => {
+    const { name, price, imageUrl } = item
     return (
         <Fragment>
             <div className="collection-item">
@@ -19,11 +23,14 @@ const CollectionItem = ({ id, name, price, imageUrl }) => {
                     <span className="name" > {name} </span>
                     <span className="price" > ${price} </span>
                 </div>
-                <CustomButton inverted >ADD TO CART </CustomButton>
+                <CustomButton onClick={() => addItem(item)} inverted >ADD TO CART </CustomButton>
             </div >
         </Fragment >
     )
 }
 
+const mapDispatchToProps = (dispatch) => ({
+    addItem: item => dispatch(addItem(item))
+})
 
-export default CollectionItem;
+export default connect(null, mapDispatchToProps)(CollectionItem);

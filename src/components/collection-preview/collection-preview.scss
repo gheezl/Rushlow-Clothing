@@ -9,11 +9,12 @@
     justify-content: center;
     margin-bottom: 25px;
     border-bottom: 1px black solid;
-    transition: font-size 1s, width 1s, color 1s;
+    transition: color 1s, border-bottom 1s;
     }
 
     .title:hover {
       color: rgb(177, 177, 177);
+      border-bottom: 1px rgb(177, 177, 177) solid;
     }
   
 
