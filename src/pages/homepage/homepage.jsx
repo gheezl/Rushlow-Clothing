@@ -7,6 +7,7 @@ const HomePage = () => {
     return (
         <Fragment>
             <div className="homepage">
+                <h1 className="name" >CRWN CLOTHING</h1>
                 <Directory />
             </div>
         </Fragment>

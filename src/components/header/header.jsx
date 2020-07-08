@@ -35,9 +35,9 @@ const Header = ({ currentUser, cart }) => {
                     {
                         cart
                             ?
-                            <CartDropdown />
-                            :
                             null
+                            :
+                            <CartDropdown />
                     }
 
                 </div>

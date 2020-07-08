@@ -5,6 +5,15 @@
   
 }
 
+.name {
+  color: black;
+  transition: color 1s;
+}
+
+.name:hover {
+  color: rgb(177, 177, 177);
+}
+
 .directory-menu {
   width: 100%;
   display: flex;
