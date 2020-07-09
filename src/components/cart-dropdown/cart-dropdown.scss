@@ -18,6 +18,19 @@
     overflow: scroll;
   }
 
+  .empty-message {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    color: black;
+    transition: color 1s;
+
+    &:hover {
+      color: rgb(177, 177, 177);
+    }
+  }
+
   button {
     margin-top: auto;
   }

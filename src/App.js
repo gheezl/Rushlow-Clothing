@@ -10,6 +10,7 @@ import HomePage from "./pages/homepage/homepage.jsx";
 import Shop from "./pages/shop/shop.jsx";
 import Header from "./components/header/header.jsx";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.jsx";
+import CheckOut from "./pages/checkout/checkout.jsx"
 
 import { setCurrentUser } from "./redux/user/user.actions.js"
 
@@ -56,6 +57,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={Shop} />
           <Route exact path="/signin" render={() => this.props.currentUser ? (<Redirect to="/" />) : (<SignInAndSignUpPage />)} />
+          <Route exact path="/checkout" component={CheckOut} />
         </Switch>
       </Fragment>
     )

@@ -15,7 +15,6 @@ import selectCurrentUser from "../../redux/user/user.selectors.js"
 import "./header.scss";
 
 const Header = ({ currentUser, cart }) => {
-    console.log(currentUser, cart)
     return (
         <Fragment>
             <div className="header" >
