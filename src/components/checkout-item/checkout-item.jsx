@@ -1,13 +1,11 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux"
-import { createStructuredSelector } from "reselect"
 
 import clearItemFromCart from "../../redux/cart/cart.actions/clearItemFromCart.js"
 import removeItem from "../../redux/cart/cart.actions/removeItem.js"
 import addItem from "../../redux/cart/cart.actions/addItem.js"
 
 import "./checkout-item.scss"
-import addItemToCart from "../../redux/cart/utilities/addItemToCart-function.js";
 
 const CheckOutItem = ({ cartItem, clearItem, removeItem, addItem }) => {
     const { name, imageUrl, price, quantity } = cartItem
