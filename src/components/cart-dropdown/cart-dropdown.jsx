@@ -9,7 +9,7 @@ import CustomButton from "../custom-button/custom-button.jsx"
 import CartItem from "../cart-item/cart-item.jsx"
 
 import selectCartItems from "../../redux/cart/selectors/cart-items.selector.js"
-import toggleCartHidden from "../../redux/cart/cart.actions.js"
+import toggleCartHidden from "../../redux/cart/cart.actions/toggleCartHidden.js"
 
 const CartDropdown = ({ cartItems, history, dispatch }) => {
     return (

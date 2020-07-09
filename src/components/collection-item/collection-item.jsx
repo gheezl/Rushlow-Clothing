@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import { connect } from "react-redux"
-import { addItem } from "../../redux/cart/cart.actions.js"
+import { addItem } from "../../redux/cart/cart.actions/addItem.js"
 
 import "./collection-item.scss"
 

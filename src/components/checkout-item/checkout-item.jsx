@@ -2,9 +2,11 @@ import React, { Fragment } from "react";
 import { connect } from "react-redux"
 import { createStructuredSelector } from "reselect"
 
+import clearItemFromCart from "../../redux/cart/cart.actions/clearItemFromCart.js"
+
 import "./checkout-item.scss"
 
-const CheckOutItem = ({ cartItem: { name, imageUrl, price, quantity } }) => {
+const CheckOutItem = ({ cartItem: { name, imageUrl, price, quantity }, clearItem }) => {
     return (
         <Fragment>
             <div className="checkout-item">
@@ -14,10 +16,14 @@ const CheckOutItem = ({ cartItem: { name, imageUrl, price, quantity } }) => {
                 <span className="name" >{name}</span>
                 <span className="quantity" >{quantity}</span>
                 <span className="price" >${price}</span>
-                <div className="remove-button">✖️</div>
+                <div onClick={() => clearItem()} className="remove-button">X</div>
             </div>
         </Fragment>
     )
 }
 
-export default CheckOutItem;
+const mapDispatchToProps = dispatch => ({
+    clearItem: item => dispatch(clearItemFromCart(item))
+})
+
+export default connect(null, mapDispatchToProps)(CheckOutItem);

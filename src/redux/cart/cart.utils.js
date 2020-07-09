@@ -1,4 +1,4 @@
-import { addItem } from "./cart.actions"
+import { addItem } from "./cart.actions/cart.actions"
 
 const addItemToCart = (cartItems, cartItemToAdd) => {
     const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToAdd.id)
