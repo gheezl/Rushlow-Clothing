@@ -10,6 +10,12 @@
   .image-container {
     width: 23%;
     padding-right: 15px;
+    opacity: 100%;
+    transition: opacity 1s;
+
+    &:hover {
+      opacity: 90%;
+    }
 
     img {
       width: 100%;
@@ -23,9 +29,20 @@
   }
 
   .quantity {
+    display: flex;
     padding-left: 20px;
+  
+
+  .arrow {
+    margin: 5px;
+    cursor: pointer;
   }
 
+  .value {
+    margin: 5px;
+  }
+
+}
   .remove-button {
     padding-left: 12px;
     cursor: pointer;
