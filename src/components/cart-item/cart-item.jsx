@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import { connect, connectAdvanced } from "react-redux"
-import { createStructuredSelector } from "reselect"
+import { connect } from "react-redux"
+
 
 import clearItemFromCart from "../../redux/cart/cart.actions/clearItemFromCart.js"
 
