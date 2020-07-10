@@ -3,14 +3,21 @@ import { connect } from "react-redux"
 
 import selectCollection from "../../redux/shop/selectors/collection.selector.js"
 
+import CollectionItem from "../../components/collection-item/collection-item.jsx"
+
 import "./collection.scss"
 
-const CollectionPage = ({ match }) => {
-    console.log("collection", match)
+const CollectionPage = ({ collection }) => {
+    const { title, items } = collection
     return (
         <Fragment>
             <div className="collection-page">
-                <h1>Category page</h1>
+                <h2 className="title">{title}</h2>
+                <div className="items">
+                    {
+                        items.map(item => <CollectionItem key={item.id} item={item} />)
+                    }
+                </div>
             </div>
         </Fragment>
     )
