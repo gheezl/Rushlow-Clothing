@@ -9,6 +9,7 @@ import "./checkout.scss"
 import CheckOutItem from "../../components/checkout-item/checkout-item.jsx";
 
 const CheckOut = ({ cartItems, total }) => {
+    console.log(cartItems)
     return (
         <Fragment>
             <div className="checkout-page">
@@ -17,9 +18,11 @@ const CheckOut = ({ cartItems, total }) => {
                 </div>
                 <div className="cart-items">
                     {
-                        cartItems.map(cartItem =>
-                            <CheckOutItem key={cartItem.id} cartItem={cartItem} />
-                        )
+                        cartItems.length
+                            ? cartItems.map(cartItem =>
+                                <CheckOutItem key={cartItem.id} cartItem={cartItem} />
+                            )
+                            : <span className="empty-cart" >Your cart is empty</span>
                     }
                 </div>
                 <div className="total">

@@ -37,7 +37,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // border: black 1px solid;
+        
+
+      .empty-cart {
+        font-size: 35px;
+        margin: 20px auto;
+      }
     }
 
   .total {
