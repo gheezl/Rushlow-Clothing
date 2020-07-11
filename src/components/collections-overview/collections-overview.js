@@ -5,22 +5,23 @@ import { createStructuredSelector } from "reselect"
 import CollectionPreview from "../collection-preview/collection-preview.jsx"
 
 import selectShopCollections from "../../redux/shop/selectors/shop.selector.js"
-import loopCollections from "../../redux/directory/utilites/collections.utility.js"
+import selectCollectionsForPreview from "../../redux/shop/selectors/for-preview.selector.js"
 
 import "./collections-overview.scss"
 
 const CollectionsOverview = (collections) => {
+    console.log("hi", collections)
     return (
         <Fragment>
             <div className="collections-overview" >
-                {
+                {/* {
                     collections.map(({ id, ...otherCollectionProps }) => (
                         <CollectionPreview
                             key={id}
                             {...otherCollectionProps}
                         />
                     ))
-                }
+                } */}
             </div>
         </Fragment>
     )
