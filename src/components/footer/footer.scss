@@ -1,0 +1,60 @@
+.footer {
+    margin-top: 35px;
+
+    .links {
+        display: flex;
+        justify-content: center;
+
+        .angel-list-link {
+            width: 20px;
+            height: 20px;
+            opacity: 100%;
+            transition: opacity 1s;
+            margin-right: 10px;
+            margin-left: 10px;
+
+            &:hover {
+                opacity: 50%;
+            }
+        }
+
+        .github-link {
+            width: 20px;
+            height: 20px;
+            opacity: 100%;
+            transition: opacity 1s;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            &:hover {
+                opacity: 50%;
+            }
+        }
+
+        .linkedin-link {
+            width: 20px;
+            height: 20px;
+            opacity: 100%;
+            transition: opacity 1s;
+            margin-left: 10px;
+            margin-right: 10px;
+            
+            &:hover {
+                opacity: 50%;
+            }
+        }
+    }
+
+    .made-with {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        color: black;
+        transition: color 1s;
+
+
+        &:hover {
+            color:rgb(177, 177, 177) ;
+        }
+    }
+}

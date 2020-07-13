@@ -13,8 +13,9 @@ import selectCurrentUser from "../../redux/user/user.selectors.js"
 
 
 import "./header.scss";
+import toggleFooter from '../../redux/footer/actions/toggleFooter.js';
 
-const Header = ({ currentUser, cart }) => {
+const Header = ({ currentUser, cart, toggleFooter }) => {
     return (
         <Fragment>
             <div className="header" >
@@ -33,7 +34,7 @@ const Header = ({ currentUser, cart }) => {
                             ?
                             <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div>
                             :
-                            <Link className="option" to="/signin">SIGN IN</Link>
+                            <Link className="option" onClick={toggleFooter} to="/signin">SIGN IN</Link>
                     }
                     <CartIcon />
                     {
@@ -55,4 +56,8 @@ const mapStateToProps = createStructuredSelector({
     cart: selectCartHidden,
 })
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch) => ({
+    toggleFooter: () => dispatch(toggleFooter())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
