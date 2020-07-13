@@ -10,7 +10,6 @@ import CartItem from "../cart-item/cart-item.jsx"
 
 import selectCartItems from "../../redux/cart/selectors/cart-items.selector.js"
 import toggleCartHidden from "../../redux/cart/cart.actions/toggleCartHidden.js"
-import hideFooter from '../../redux/footer/actions/toggleFooter.js';
 
 const CartDropdown = ({ cartItems, history, dispatch }) => {
     return (

@@ -37,13 +37,13 @@ class CheckOut extends Component {
                     </div>
                     <div className="disclaimer" >
                         DISCLAIMER
-                </div>
+                          </div>
                     <div className="test-warning">
                         *Please use the following test credit card for your payments, thank you!*
-                </div>
+                        </div>
                     <div className="test-card">
                         4242 4242 4242 4242 - Expires: 01/25 - CVV: 789
-                </div>
+                        </div>
                     <div className="stripe">
                         <StripeCheckoutButton />
                     </div>
