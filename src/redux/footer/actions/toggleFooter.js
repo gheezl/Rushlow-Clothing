@@ -1,7 +1,7 @@
 import FooterActionTypes from "../footer-types.js"
 
 const toggleFooter = () => ({
-    type: FooterActionTypes.TOGGLE_FOOTER_HIDDEN
+    type: FooterActionTypes.HIDE_FOOTER
 })
 
 export default toggleFooter;

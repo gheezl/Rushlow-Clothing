@@ -1,5 +1,6 @@
 const FooterActionTypes = {
-    TOGGLE_FOOTER_HIDDEN: "TOGGLE_FOOTER_HIDDEN"
+    HIDE_FOOTER: "HIDE_FOOTER",
+    DISPLAY_FOOTER: "DISPLAY_FOOTER"
 }
 
 export default FooterActionTypes;

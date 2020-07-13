@@ -7,10 +7,16 @@ const INITIAL_STATE = {
 
 const footerReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case FooterActionTypes.TOGGLE_FOOTER_HIDDEN:
+        case FooterActionTypes.HIDE_FOOTER:
             return {
                 ...state,
-                hidden: !state.hidden
+                hidden: true
+            }
+
+        case FooterActionTypes.DISPLAY_FOOTER:
+            return {
+                ...state,
+                hidden: false
             }
 
         default:

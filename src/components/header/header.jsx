@@ -10,23 +10,24 @@ import CartIcon from "../cart-icon/cart-icon.jsx"
 import CartDropdown from "../cart-dropdown/cart-dropdown.jsx"
 import selectCartHidden from "../../redux/cart/selectors/hidden.selector.js"
 import selectCurrentUser from "../../redux/user/user.selectors.js"
-
+import displayFooter from "../../redux/footer/actions/displayFooter.js"
+import hideFooter from '../../redux/footer/actions/toggleFooter.js';
 
 import "./header.scss";
-import toggleFooter from '../../redux/footer/actions/toggleFooter.js';
 
-const Header = ({ currentUser, cart, toggleFooter }) => {
+
+const Header = ({ currentUser, cart, hideFooter, displayFooter }) => {
     return (
         <Fragment>
             <div className="header" >
-                <Link className="logo-container" to="/">
+                <Link onClick={displayFooter} className="logo-container" to="/">
                     <Logo className="logo" />
                 </Link>
                 <div className="options" >
-                    <Link className="option" to="/shop" >
+                    <Link onClick={displayFooter} className="option" to="/shop" >
                         SHOP
                     </Link>
-                    <Link className="option" to="/shop" >
+                    <Link onClick={displayFooter} className="option" to="/shop" >
                         CONTACT
                     </Link>
                     {
@@ -34,7 +35,7 @@ const Header = ({ currentUser, cart, toggleFooter }) => {
                             ?
                             <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div>
                             :
-                            <Link className="option" onClick={toggleFooter} to="/signin">SIGN IN</Link>
+                            <Link className="option" onClick={hideFooter} to="/signin">SIGN IN</Link>
                     }
                     <CartIcon />
                     {
@@ -57,7 +58,8 @@ const mapStateToProps = createStructuredSelector({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    toggleFooter: () => dispatch(toggleFooter())
+    hideFooter: () => dispatch(hideFooter()),
+    displayFooter: () => dispatch(displayFooter())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

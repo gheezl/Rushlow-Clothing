@@ -63,8 +63,8 @@ class App extends Component {
         </Switch>
         {
           this.props.footerHidden
-            ? <Footer />
-            : null
+            ? null
+            : <Footer />
         }
       </Fragment>
     )
