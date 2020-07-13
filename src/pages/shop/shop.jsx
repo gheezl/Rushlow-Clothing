@@ -6,6 +6,7 @@ import CollectionsOverview from "../../components/collections-overview/collectio
 import CollectionPage from "../collection/collection.jsx"
 
 const Shop = ({ match }) => {
+    console.log(match)
     return (
         <Fragment>
             <div className="shop-page" >

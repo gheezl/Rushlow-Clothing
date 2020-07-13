@@ -1,10 +1,10 @@
 import { createSelector } from "reselect"
 
-const selectShop = state => state.shop.collections
+const selectShop = state => state.shop
 
 const selectCollectionsForPreview = createSelector(
     [selectShop],
-    shop => shop.map(key => shop[key])
+    shop => Object.keys(shop).map(key => shop[key])
 )
 
 export default selectCollectionsForPreview;

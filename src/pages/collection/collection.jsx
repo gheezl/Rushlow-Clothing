@@ -8,7 +8,6 @@ import CollectionItem from "../../components/collection-item/collection-item.jsx
 import "./collection.scss"
 
 const CollectionPage = ({ collection }) => {
-    console.log(collection)
     const { title, items } = collection
     return (
         <Fragment>
