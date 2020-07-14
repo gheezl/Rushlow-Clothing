@@ -7,11 +7,12 @@ const Footer = () => {
         <Fragment>
             <div className="footer">
                 <div className="links">
-                    <a href="https://angel.co/u/jacob-rushlow" >
+                    <a href="https://angel.co/u/jacob-rushlow"
+                    >
                         <img src="angellist.png" className="angel-list-link" />
                     </a>
                     <a href="https://github.com/gheezl">
-                        <img src="github.png" className="github-link" />
+                        <img src="https://image.flaticon.com/icons/png/512/25/25231.png" className="github-link" />
                     </a>
                     <a href="https://www.linkedin.com/in/jacob-rushlow-224a581ab/">
                         <img src="linkedin.png" className="linkedin-link" />

@@ -12,7 +12,11 @@ const CheckOutItem = ({ cartItem, clearItem, removeItem, addItem }) => {
     return (
         <Fragment>
             <div className="checkout-item">
-                <div className="image-container" >
+                <div className="image-container"
+                // style={{
+                //     backgroundImage: `url(${imageUrl})`
+                // }}
+                >
                     <img alt="item" src={imageUrl} />
                 </div>
                 <span className="name" >{name}</span>
