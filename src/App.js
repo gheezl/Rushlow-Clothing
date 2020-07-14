@@ -4,6 +4,7 @@ import { createStructuredSelector } from "reselect"
 import { auth, createUserProfileDocument } from "./firebase/firebase.js"
 import { connect } from "react-redux"
 
+
 import './App.css';
 
 import HomePage from "./pages/homepage/homepage.jsx";
@@ -17,7 +18,6 @@ import selectHidden from "./redux/footer/selectors/footer-hidden.selector.js"
 import { setCurrentUser } from "./redux/user/user.actions.js"
 
 import selectCurrentUser from "./redux/user/user.selectors"
-
 
 
 class App extends Component {

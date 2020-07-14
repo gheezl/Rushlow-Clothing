@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import "./homepage.scss"
 import Directory from "../../components/directory/directory.jsx"
 
+import "./homepage.scss"
 
 const HomePage = () => {
     return (
