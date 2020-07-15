@@ -4,12 +4,12 @@ import { createStructuredSelector } from "reselect"
 
 import CollectionPreview from "../collection-preview/collection-preview.jsx"
 
-import selectShopCollections from "../../redux/shop/selectors/shop.selector.js"
 import selectCollectionsForPreview from "../../redux/shop/selectors/for-preview.selector.js"
 
 import "./collections-overview.scss"
 
 const CollectionsOverview = (collections) => {
+    console.log(collections.collections)
     return (
         <Fragment>
             <div className="collections-overview" >
@@ -25,6 +25,9 @@ const CollectionsOverview = (collections) => {
         </Fragment>
     )
 }
+
+
+// 
 
 
 
