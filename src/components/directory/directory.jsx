@@ -18,6 +18,7 @@ const Directory = ({ sections }) => {
                         id={section.id}
                         size={section.size}
                         linkUrl={section.linkUrl}
+                        key={section.id}
                     />
                 ))}
             </div>

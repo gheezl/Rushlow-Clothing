@@ -77,7 +77,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  footerHidden: selectHidden
+  footerHidden: selectHidden,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
