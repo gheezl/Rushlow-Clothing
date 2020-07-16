@@ -9,12 +9,12 @@ import selectCollectionsForPreview from "../../redux/shop/selectors/for-preview.
 import "./collections-overview.scss"
 
 const CollectionsOverview = (collections) => {
-    console.log(collections.collections[0])
+    console.log(collections.collections)
     return (
         <Fragment>
             <div className="collections-overview" >
                 {
-                    collections.collections[0].map(({ id, ...otherCollectionProps }) => (
+                    collections.collections.map(({ id, ...otherCollectionProps }) => (
                         <CollectionPreview
                             key={id}
                             {...otherCollectionProps}
