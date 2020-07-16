@@ -1,7 +1,6 @@
-import React, { Fragment } from "react"
+import React, { Fragment, Component } from "react"
 
 import "./with-spinner.scss"
-
 
 
 const WithSpinner = (WrappedComponent) => {
@@ -9,10 +8,10 @@ const WithSpinner = (WrappedComponent) => {
         return isLoading ? (
             <div className="spinner-overlay">
                 <div className="spinner-container">
+
                 </div>
             </div>
-        )
-            : (
+        ) : (
                 <WrappedComponent {...otherProps} />
             )
     }
