@@ -21,7 +21,7 @@ class Shop extends Component {
 
         this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
             const collectionsMap = convertCollectionsSnapshotToMap(snapshot.docs)
-            updateCollections("hi")
+            updateCollections(collectionsMap)
         })
     }
 

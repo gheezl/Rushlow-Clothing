@@ -11,12 +11,9 @@ const shopReducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case ShopActionsTypes.UPDATE_COLLECTIONS:
             return {
-                ...state,
-                collections: action.payload
+                state: action.payload
             }
 
-        case CartActionTypes.TOGGLE_CART_HIDDEN:
-            return SHOP_DATA
 
         default:
             return state
