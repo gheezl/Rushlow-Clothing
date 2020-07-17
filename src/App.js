@@ -19,6 +19,8 @@ import { setCurrentUser } from "./redux/user/user.actions.js"
 
 import selectCurrentUser from "./redux/user/user.selectors"
 
+import { googleSignInStart } from "./redux/user/user.actions.js"
+
 
 class App extends Component {
 
@@ -28,6 +30,7 @@ class App extends Component {
 
   componentDidMount() {
     const { setCurrentUser } = this.props
+
 
     // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
     //   if (userAuth) {
@@ -47,9 +50,9 @@ class App extends Component {
   }
 
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
+  // componentWillUnmount() {
+  //   this.unsubscribeFromAuth();
+  // }
 
   render() {
     return (
@@ -72,7 +75,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
+  setCurrentUser: user => dispatch(setCurrentUser(user)),
+  googleSignInStart: () => dispatch(googleSignInStart())
 })
 
 const mapStateToProps = createStructuredSelector({

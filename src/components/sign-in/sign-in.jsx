@@ -21,7 +21,6 @@ class SignIn extends Component {
         }
     }
 
-
     handleSubmit = async (event) => {
         event.preventDefault()
 
@@ -83,7 +82,7 @@ class SignIn extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    googleSignInStart: () => dispatch(googleSignInStart)
+    googleSignInStart: () => dispatch(googleSignInStart())
 })
 
 
