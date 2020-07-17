@@ -11,9 +11,6 @@ import WithSpinner from "../../components/spinner/with-spinner.jsx"
 
 import fetchCollectionsStartAsync from "../../redux/shop/shop.actions.js"
 
-import updateCollections from "../../redux/shop/shop.actions.js"
-import fetchCollectionsStart from '../../redux/shop/shop.actions.js';
-
 
 
 
