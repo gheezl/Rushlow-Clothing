@@ -5,18 +5,12 @@ import { Route } from "react-router-dom";
 import { createStructuredSelector } from "reselect"
 import selectIsCollectionFetching from "../../redux/shop/selectors/selectIsCollectionFetching.selector.js"
 
-import CollectionsOverview from "../../components/collections-overview/collections-overview.js"
-import CollectionPage from "../collection/collection.jsx"
-import WithSpinner from "../../components/spinner/with-spinner.jsx"
+import CollectionsOverviewContainer from "../../components/collections-overview/collections-overview.container.jsx"
+import CollectionsPageContainer from "../../pages/collection/collection.container.jsx"
 
 import fetchCollectionsStartAsync from "../../redux/shop/shop.actions.js"
 
 
-
-
-
-const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview)
-const CollectionsPageWithSpinner = WithSpinner(CollectionPage)
 
 class Shop extends Component {
 
@@ -26,12 +20,20 @@ class Shop extends Component {
     }
 
     render() {
-        const { match, isCollectionFetching } = this.props
+        const { match } = this.props
         return (
             <Fragment>
                 <div className="shop-page" >
-                    <Route exact path={`${match.path}`} render={(props) => <CollectionsOverviewWithSpinner isLoading={isCollectionFetching} {...props} />} />
-                    <Route exact path={`${match.path}/:categoryId`} render={(props) => <CollectionsPageWithSpinner isLoading={isCollectionFetching} {...props} />} />
+                    <Route
+                        exact
+                        path={`${match.path}`}
+                        component={CollectionsOverviewContainer}
+                    />
+                    <Route
+                        exact
+                        path={`${match.path}/:categoryId`}
+                        component={CollectionsPageContainer}
+                    />
                 </div>
             </Fragment>
         )
