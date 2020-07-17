@@ -8,15 +8,15 @@ import selectIsCollectionFetching from "../../redux/shop/selectors/selectIsColle
 import CollectionsOverviewContainer from "../../components/collections-overview/collections-overview.container.jsx"
 import CollectionsPageContainer from "../../pages/collection/collection.container.jsx"
 
-import fetchCollectionsStartAsync from "../../redux/shop/shop.actions.js"
+import { fetchCollectionsStart } from "../../redux/shop/shop.actions.js"
 
 
 
 class Shop extends Component {
 
     componentDidMount() {
-        const { fetchCollectionsStartAsync } = this.props
-        fetchCollectionsStartAsync()
+        const { fetchCollectionsStart } = this.props
+        fetchCollectionsStart()
     }
 
     render() {
@@ -45,7 +45,7 @@ const mapStateToProps = createStructuredSelector({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync())
+    fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop);

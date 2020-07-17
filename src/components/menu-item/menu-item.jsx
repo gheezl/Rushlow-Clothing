@@ -4,7 +4,6 @@ import "./menu-item.scss"
 
 
 const MenuItem = ({ title, image, size, history, linkUrl }) => {
-    console.log(linkUrl)
     return (
         <Fragment>
             <div
