@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
 import { createStructuredSelector } from "reselect"
-import { auth, createUserProfileDocument } from "./firebase/firebase.js"
 import { connect } from "react-redux"
 
 
@@ -15,8 +14,6 @@ import CheckOut from "./pages/checkout/checkout.jsx"
 import Footer from "./components/footer/footer.jsx"
 import selectHidden from "./redux/footer/selectors/footer-hidden.selector.js"
 
-import { setCurrentUser } from "./redux/user/user.actions.js"
-
 import selectCurrentUser from "./redux/user/user.selectors"
 
 import { googleSignInStart } from "./redux/user/user.actions.js"
@@ -29,7 +26,6 @@ class App extends Component {
 
 
   componentDidMount() {
-    const { setCurrentUser } = this.props
 
 
     // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
@@ -74,14 +70,14 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user)),
-  googleSignInStart: () => dispatch(googleSignInStart())
-})
+// const mapDispatchToProps = (dispatch) => ({
+//   setCurrentUser: user => dispatch(setCurrentUser(user)),
+//   googleSignInStart: () => dispatch(googleSignInStart())
+// })
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   footerHidden: selectHidden,
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);

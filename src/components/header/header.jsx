@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg"
 import { createStructuredSelector } from "reselect"
 
-import { auth } from "../../firebase/firebase.js"
+import firebase, { auth, signOut } from "../../firebase/firebase.js"
 import { connect } from "react-redux"
 
 import CartIcon from "../cart-icon/cart-icon.jsx"
@@ -14,6 +14,7 @@ import displayFooter from "../../redux/footer/actions/displayFooter.js"
 import hideFooter from '../../redux/footer/actions/toggleFooter.js';
 
 import "./header.scss";
+
 
 
 const Header = ({ currentUser, cart, hideFooter, displayFooter }) => {
