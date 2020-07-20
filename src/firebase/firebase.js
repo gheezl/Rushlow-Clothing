@@ -80,18 +80,22 @@ export const convertCollectionsSnapshotToMap = (collections) => {
     return finalCollection
 }
 
+const signOutOfUser = () => {
+    firebase.auth().signOut()
+        .then(() => {
+            console.log('Signed Out');
+        })
+        .catch(e => {
+            console.error('Sign Out Error', e);
+        });
+}
+
 
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-export const signOut = firebase.auth().signOut()
-    .then(() => {
-        console.log('Signed Out');
-    })
-    .catch(e => {
-        console.error('Sign Out Error', e);
-    });
+export const signOut = signOutOfUser
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider()
 googleProvider.setCustomParameters({ prompt: "select_account" });

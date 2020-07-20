@@ -47,14 +47,14 @@ class SignIn extends Component {
 
                     <form onSubmit={this.handleSubmit} >
                         <FormInput
-                            id="Email"
+                            id="email"
                             name="Email"
                             value={this.state.email}
                             required
                             onChange={this.handleChange}
                         />
                         <FormInput
-                            id="Password"
+                            id="password"
                             name="Password"
                             type="password"
                             value={this.state.password}

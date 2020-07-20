@@ -1,9 +1,9 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg"
 import { createStructuredSelector } from "reselect"
 
-import firebase, { auth, signOut } from "../../firebase/firebase.js"
+import { auth, signOut } from "../../firebase/firebase.js"
 import { connect } from "react-redux"
 
 import CartIcon from "../cart-icon/cart-icon.jsx"
@@ -34,7 +34,7 @@ const Header = ({ currentUser, cart, hideFooter, displayFooter }) => {
                     {
                         currentUser
                             ?
-                            <div className="option" onClick={() => auth.signOut()}>SIGN OUT</div>
+                            <div className="option" onClick={() => signOut()}>SIGN OUT</div>
                             :
                             <Link className="option" onClick={hideFooter} to="/signin">SIGN IN</Link>
                     }
