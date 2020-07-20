@@ -1,10 +1,10 @@
-import { takeLatest, put, all, call, take } from "redux-saga/effects"
+import { takeLatest, put, all, call } from "redux-saga/effects"
 
 import UserActionTypes from "./user.types.js"
 
 import { auth, createUserProfileDocument, googleProvider, getCurrentUser } from "../../firebase/firebase.js"
 
-import { SignInSuccess, SignInFailure } from "../user/user.actions.js"
+import { SignInSuccess, SignInFailure, SignOutSuccess, SignOutFailure } from "../user/user.actions.js"
 
 // Saga functions
 
@@ -53,6 +53,16 @@ export function* isUserAuthenticated() {
     }
 }
 
+export function* signOutOfAccount() {
+    try {
+        yield auth.signOut()
+        yield put(SignOutSuccess())
+    }
+    catch (error) {
+        put(SignOutFailure(error))
+    }
+}
+
 // listensers
 
 export function* onGoogleSignInStart() {
@@ -68,13 +78,18 @@ export function* onCheckUserSession() {
     yield takeLatest(UserActionTypes.CHECK_USER_SESSION, isUserAuthenticated)
 }
 
+export function* onSignOutStart() {
+    yield takeLatest(UserActionTypes.SIGN_OUT_START, signOutOfAccount)
+}
+
 // Final saga
 
 function* userSagas() {
     yield all([
         call(onGoogleSignInStart),
         call(onEmailSignInStart),
-        call(onCheckUserSession)
+        call(onCheckUserSession),
+        call(onSignOutStart)
     ])
 }
 

@@ -13,11 +13,13 @@ import selectCurrentUser from "../../redux/user/user.selectors.js"
 import displayFooter from "../../redux/footer/actions/displayFooter.js"
 import hideFooter from '../../redux/footer/actions/toggleFooter.js';
 
+import { SignOutStart } from "../../redux/user/user.actions.js"
+
 import "./header.scss";
 
 
 
-const Header = ({ currentUser, cart, hideFooter, displayFooter }) => {
+const Header = ({ currentUser, cart, hideFooter, displayFooter, SignOutStart }) => {
     return (
         <Fragment>
             <div className="header" >
@@ -34,7 +36,7 @@ const Header = ({ currentUser, cart, hideFooter, displayFooter }) => {
                     {
                         currentUser
                             ?
-                            <div className="option" onClick={() => signOut()}>SIGN OUT</div>
+                            <div className="option" onClick={SignOutStart}>SIGN OUT</div>
                             :
                             <Link className="option" onClick={hideFooter} to="/signin">SIGN IN</Link>
                     }
@@ -60,7 +62,8 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = (dispatch) => ({
     hideFooter: () => dispatch(hideFooter()),
-    displayFooter: () => dispatch(displayFooter())
+    displayFooter: () => dispatch(displayFooter()),
+    SignOutStart: () => dispatch(SignOutStart())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
