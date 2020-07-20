@@ -16,7 +16,7 @@ import selectHidden from "./redux/footer/selectors/footer-hidden.selector.js"
 
 import selectCurrentUser from "./redux/user/user.selectors"
 
-import { googleSignInStart } from "./redux/user/user.actions.js"
+import { checkUserSession } from "./redux/user/user.actions.js"
 
 
 class App extends Component {
@@ -26,29 +26,10 @@ class App extends Component {
 
 
   componentDidMount() {
+    const { checkUserSession } = this.props
+    checkUserSession()
 
-
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
-
-    //     userRef.onSnapshot(snapshot => {
-    //       setCurrentUser({
-    //         id: snapshot.id,
-    //         ...snapshot.data()
-    //       })
-    //     });
-    //   }
-    //   else {
-    //     setCurrentUser(userAuth)
-    //   }
-    // })
   }
-
-
-  // componentWillUnmount() {
-  //   this.unsubscribeFromAuth();
-  // }
 
   render() {
     return (
@@ -70,14 +51,13 @@ class App extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => ({
-//   setCurrentUser: user => dispatch(setCurrentUser(user)),
-//   googleSignInStart: () => dispatch(googleSignInStart())
-// })
+const mapDispatchToProps = (dispatch) => ({
+  checkUserSession: () => dispatch(checkUserSession())
+})
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   footerHidden: selectHidden,
 })
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
