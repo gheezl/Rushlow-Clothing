@@ -4,7 +4,7 @@ import UserActionTypes from "./user.types.js"
 
 import { auth, createUserProfileDocument, googleProvider, getCurrentUser } from "../../firebase/firebase.js"
 
-import { SignInSuccess, SignInFailure, SignOutSuccess, SignOutFailure } from "../user/user.actions.js"
+import { SignInSuccess, SignInFailure, SignOutSuccess, SignOutFailure, SignUpSuccess, SignUpFailure } from "../user/user.actions.js"
 
 // Saga functions
 
@@ -63,6 +63,22 @@ export function* signOutOfAccount() {
     }
 }
 
+export function* signUp({ payload: { displayName, Email, Password } }) {
+    try {
+        const { user } = yield auth.createUserWithEmailAndPassword(
+            Email,
+            Password,
+        )
+
+        yield createUserProfileDocument(user, { displayName })
+        yield isUserAuthenticated()
+        yield put(SignUpSuccess())
+    }
+    catch (error) {
+        yield put(SignUpFailure(error))
+    }
+}
+
 // listensers
 
 export function* onGoogleSignInStart() {
@@ -82,6 +98,10 @@ export function* onSignOutStart() {
     yield takeLatest(UserActionTypes.SIGN_OUT_START, signOutOfAccount)
 }
 
+export function* onSignUpStart() {
+    yield takeLatest(UserActionTypes.SIGN_UP_START, signUp)
+}
+
 // Final saga
 
 function* userSagas() {
@@ -89,7 +109,8 @@ function* userSagas() {
         call(onGoogleSignInStart),
         call(onEmailSignInStart),
         call(onCheckUserSession),
-        call(onSignOutStart)
+        call(onSignOutStart),
+        call(onSignUpStart)
     ])
 }
 

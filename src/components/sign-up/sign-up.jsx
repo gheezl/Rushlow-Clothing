@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
 
 import FormInput from "../form-input/form-input.jsx"
 import CustomButton from "../custom-button/custom-button.jsx"
 
 import { auth, createUserProfileDocument } from "../../firebase/firebase.js"
 
+import { SignUpStart } from "../../redux/user/user.actions.js"
+
 import "./sign-up.scss"
+
 
 
 
@@ -20,31 +24,18 @@ class SignUp extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-
-        const { displayName, Email, Password, ConfirmPassword } = this.state
+        const { Password, ConfirmPassword } = this.state
 
         if (Password !== ConfirmPassword) {
             alert("Your passwords do not match. Please try again.")
             return
         }
         else {
-            try {
-                const { user } = await auth.createUserWithEmailAndPassword(
-                    Email,
-                    Password,
-                )
+            const { SignUpStart } = this.props;
 
-                console.log(user)
-
-                await createUserProfileDocument(user, { displayName })
-
-                this.setState({
-
-                })
-            }
-            catch (error) {
-                alert(error.message)
-            }
+            const { displayName, Email, Password } = this.state
+            SignUpStart(displayName, Email, Password)
+            this.setState({})
         }
     }
 
@@ -52,10 +43,13 @@ class SignUp extends Component {
         const { id, value } = event.target;
 
         this.setState({ [id]: value })
+
+        console.log(this.state)
     }
 
     render() {
         const { displayName, email, password, confirmPassword } = this.state
+
         return (
             <Fragment>
                 <div className="sign-up">
@@ -97,9 +91,7 @@ class SignUp extends Component {
                             onChange={this.handleChange}
                             required
                         />
-
                         <CustomButton type="submit">SIGN UP</CustomButton>
-
                     </form>
                 </div>
             </Fragment>
@@ -107,4 +99,12 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp
+const mapDispatchToProps = (dispatch) => ({
+    SignUpStart: (displayName, Email, Password) => dispatch(SignUpStart(
+        {
+            displayName, Email, Password
+        }
+    ))
+})
+
+export default connect(null, mapDispatchToProps)(SignUp)
