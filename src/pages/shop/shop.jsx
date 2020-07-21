@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { connect } from "react-redux"
 import { Route } from "react-router-dom";
 
@@ -12,40 +12,33 @@ import { fetchCollectionsStart } from "../../redux/shop/shop.actions.js"
 
 
 
-class Shop extends Component {
-
-    componentDidMount() {
-        const { fetchCollectionsStart } = this.props
+const Shop = ({ fetchCollectionsStart, match }) => {
+    useEffect(() => {
         fetchCollectionsStart()
-    }
+    }, [fetchCollectionsStart])
 
-    render() {
-        const { match } = this.props
-        return (
-            <Fragment>
-                <div className="shop-page" >
-                    <Route
-                        exact
-                        path={`${match.path}`}
-                        component={CollectionsOverviewContainer}
-                    />
-                    <Route
-                        exact
-                        path={`${match.path}/:categoryId`}
-                        component={CollectionsPageContainer}
-                    />
-                </div>
-            </Fragment>
-        )
-    }
+
+    return (
+        <Fragment>
+            <div className="shop-page" >
+                <Route
+                    exact
+                    path={`${match.path}`}
+                    component={CollectionsOverviewContainer}
+                />
+                <Route
+                    exact
+                    path={`${match.path}/:categoryId`}
+                    component={CollectionsPageContainer}
+                />
+            </div>
+        </Fragment>
+    )
+
 }
-
-const mapStateToProps = createStructuredSelector({
-    isCollectionFetching: selectIsCollectionFetching
-})
 
 const mapDispatchToProps = (dispatch) => ({
     fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shop);
+export default connect(null, mapDispatchToProps)(Shop);

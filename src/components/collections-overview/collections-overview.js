@@ -9,7 +9,6 @@ import selectCollectionsForPreview from "../../redux/shop/selectors/for-preview.
 import "./collections-overview.scss"
 
 const CollectionsOverview = (collections) => {
-    console.log(collections.collections)
     return (
         <Fragment>
             <div className="collections-overview" >
