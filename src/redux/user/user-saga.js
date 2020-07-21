@@ -79,7 +79,7 @@ export function* signUp({ payload: { displayName, Email, Password } }) {
     }
 }
 
-// listensers
+// listeners
 
 export function* onGoogleSignInStart() {
     yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle)
