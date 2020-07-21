@@ -58,7 +58,7 @@ const SignIn = ({ googleSignInStart, emailSignInStart }) => {
                     </div>
                 </form>
             </div>
-        </Fragment >
+        </Fragment>
     )
 }
 

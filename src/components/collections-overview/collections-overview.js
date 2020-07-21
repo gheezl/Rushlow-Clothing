@@ -1,5 +1,5 @@
-import React, { Fragment } from "react"
-import { connect } from "react-redux"
+import React, { Fragment, useCallback } from "react"
+import { connect, useDispatch } from "react-redux"
 import { createStructuredSelector } from "reselect"
 
 import CollectionPreview from "../collection-preview/collection-preview.jsx"
@@ -7,6 +7,7 @@ import CollectionPreview from "../collection-preview/collection-preview.jsx"
 import selectCollectionsForPreview from "../../redux/shop/selectors/for-preview.selector.js"
 
 import "./collections-overview.scss"
+
 
 const CollectionsOverview = (collections) => {
     return (
