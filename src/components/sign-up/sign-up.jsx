@@ -24,8 +24,6 @@ const SignUp = ({ SignUpStart }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        console.log(userCredentials)
-
         if (Password !== ConfirmPassword) {
             alert("Your passwords do not match. Please try again.")
             return
