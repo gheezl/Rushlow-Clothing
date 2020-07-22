@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from "react"
+import React, { Fragment } from "react"
 import { connect } from "react-redux"
 import { createStructuredSelector } from "reselect";
 import axios from "axios"
