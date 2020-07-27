@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import Directory from "../../components/directory/directory.jsx"
 
 
+import WithFooter from "../../components/footer/withFooter.jsx"
+
 import "./homepage.scss"
 
 const HomePage = () => {
@@ -17,4 +19,4 @@ const HomePage = () => {
 
 
 
-export default HomePage;
+export default WithFooter(HomePage);

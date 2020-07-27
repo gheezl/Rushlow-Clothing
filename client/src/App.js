@@ -6,6 +6,7 @@ import { connect } from "react-redux"
 import './App.scss';
 
 import Spinner from "./components/spinner/spinner.jsx"
+import ErrorBoundary from "./components/error-boundary/error-boundary.jsx"
 
 import selectHidden from "./redux/footer/selectors/footer-hidden.selector.js"
 import selectCurrentUser from "./redux/user/user.selectors"
@@ -30,25 +31,21 @@ const App = ({ checkUserSession, currentUser, footerHidden }) => {
 
   return (
     <Fragment>
-      <Suspense fallback={<Spinner />} >
-        <Header />
-      </Suspense>
-      <Switch>
+      <ErrorBoundary>
         <Suspense fallback={<Spinner />} >
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={Shop} />
-          <Route exact path="/signin" render={() => currentUser ? (<Redirect to="/" />) : (<SignInAndSignUpPage />)} />
-          <Route exact path="/checkout" component={CheckOut} />
+          <Header />
         </Suspense>
-      </Switch>
-      {
-        footerHidden
-          ? null
-          : <Suspense fallback={<Spinner />}>
-            <Footer />
+      </ErrorBoundary>
+      <Switch>
+        <ErrorBoundary>
+          <Suspense fallback={<Spinner />} >
+            <Route exact path="/" component={HomePage} />
+            <Route path="/shop" component={Shop} />
+            <Route exact path="/signin" render={() => currentUser ? (<Redirect to="/" />) : (<SignInAndSignUpPage />)} />
+            <Route exact path="/checkout" component={CheckOut} />
           </Suspense>
-
-      }
+        </ErrorBoundary>
+      </Switch>
     </Fragment>
   )
 }

@@ -1,0 +1,41 @@
+import React, { Component } from "react"
+
+import "./error-boundary.scss"
+
+import ErrorBoundaryContainer from "./error-boundary-container.jsx"
+
+
+
+class ErrorBoundary extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            hasErrored: false,
+        }
+    }
+
+    static getDerivedStateFromError(error) {
+
+        return { hasErrored: true }
+    }
+
+    componentDidCatch(error, info) {
+        console.log(error);
+    }
+
+
+    render() {
+        if (this.state.hasErrored) {
+            return (
+                <ErrorBoundaryContainer />
+            )
+        }
+
+        return this.props.children
+    }
+}
+
+
+
+export default ErrorBoundary;
