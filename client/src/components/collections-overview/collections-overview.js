@@ -27,10 +27,6 @@ const CollectionsOverview = (collections) => {
 }
 
 
-// 
-
-
-
 const mapStateToProps = createStructuredSelector({
     collections: selectCollectionsForPreview
 })

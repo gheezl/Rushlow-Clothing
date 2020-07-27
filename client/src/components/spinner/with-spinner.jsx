@@ -6,14 +6,14 @@ import Spinner from "./spinner.jsx"
 
 
 const WithSpinner = (WrappedComponent) => {
-    const Spinner = ({ isLoading, ...otherProps }) => {
+    const completeSpinner = ({ isLoading, ...otherProps }) => {
         return isLoading ? (
             <Spinner />
         ) : (
                 <WrappedComponent {...otherProps} />
             )
     }
-    return Spinner
+    return completeSpinner
 }
 
 
