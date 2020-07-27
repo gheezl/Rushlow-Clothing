@@ -2,9 +2,6 @@ import React, { useEffect, Fragment } from 'react';
 import { connect } from "react-redux"
 import { Route } from "react-router-dom";
 
-import { createStructuredSelector } from "reselect"
-import selectIsCollectionFetching from "../../redux/shop/selectors/selectIsCollectionFetching.selector.js"
-
 import CollectionsOverviewContainer from "../../components/collections-overview/collections-overview.container.jsx"
 import CollectionsPageContainer from "../../pages/collection/collection.container.jsx"
 

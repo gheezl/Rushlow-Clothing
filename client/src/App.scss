@@ -2,9 +2,17 @@ body {
   font-family: 'Dancing Script', cursive;
   padding: 20px 50px;
   background-color: whitesmoke;
+
+  
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+      padding: 10px ;
+  }
 }

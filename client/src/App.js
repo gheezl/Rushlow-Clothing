@@ -1,10 +1,10 @@
 import React, { useEffect, Fragment } from 'react';
 import { Route, Switch, Redirect } from "react-router-dom";
 import { createStructuredSelector } from "reselect"
-import { connect, useDispatch } from "react-redux"
+import { connect } from "react-redux"
 
 
-import './App.css';
+import './App.scss';
 
 import HomePage from "./pages/homepage/homepage.jsx";
 import Shop from "./pages/shop/shop.jsx";
