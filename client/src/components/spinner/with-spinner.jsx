@@ -1,16 +1,14 @@
-import React, { Fragment, Component } from "react"
+import React from "react"
 
 import "./with-spinner.scss"
+
+import Spinner from "./spinner.jsx"
 
 
 const WithSpinner = (WrappedComponent) => {
     const Spinner = ({ isLoading, ...otherProps }) => {
         return isLoading ? (
-            <div className="spinner-overlay">
-                <div className="spinner-container">
-
-                </div>
-            </div>
+            <Spinner />
         ) : (
                 <WrappedComponent {...otherProps} />
             )

@@ -40,7 +40,7 @@
     height: 5%;
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 15px;
 
     .name {
       width: 90%;
@@ -56,13 +56,11 @@
 
 @media only screen and (max-width: 800px) {
   .collection-item {
-      width: 30vw;
+      width: 150px;
+      height: 200px;
   }
 
   .custom-button {
-    display: block;
-    opacity: 0.9;
-    min-width: unset;
-    padding: 0 10px;
+    opacity: 100;
   }
 }

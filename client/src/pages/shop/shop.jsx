@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect, Fragment, lazy } from 'react';
 import { connect } from "react-redux"
 import { Route } from "react-router-dom";
 

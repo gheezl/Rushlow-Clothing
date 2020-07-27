@@ -22,7 +22,7 @@ const MenuItem = ({ title, image, size, history, linkUrl }) => {
                 </span>
                 </div>
             </div>
-        </Fragment >
+        </Fragment>
     )
 }
 
