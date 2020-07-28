@@ -18,7 +18,6 @@ const Shop = lazy(() => import("./pages/shop/shop.jsx"))
 const Header = lazy(() => import("./components/header/header.jsx"))
 const SignInAndSignUpPage = lazy(() => import("./pages/sign-in-and-sign-up/sign-in-and-sign-up.jsx"))
 const CheckOut = lazy(() => import("./pages/checkout/checkout.jsx"))
-const Footer = lazy(() => import("./components/footer/footer.jsx"))
 
 
 
