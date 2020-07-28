@@ -14,8 +14,6 @@ const Shop = ({ fetchCollectionsStart, match }) => {
     useEffect(() => {
         fetchCollectionsStart()
     }, [fetchCollectionsStart])
-
-
     return (
         <Fragment>
             <div className="shop-page" >
