@@ -1,20 +1,22 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, Component } from 'react';
 import Directory from "../../components/directory/directory.jsx"
-
 
 import WithFooter from "../../components/footer/withFooter.jsx"
 
 import "./homepage.scss"
 
-const HomePage = () => {
-    return (
-        <Fragment>
-            <div className="homepage">
-                <h1 className="name" >CRWN CLOTHING</h1>
-                <Directory />
-            </div>
-        </Fragment>
-    )
+class HomePage extends Component {
+
+    render() {
+        return (
+            <Fragment>
+                <div className="homepage">
+                    <h1 className="name" >CRWN CLOTHING</h1>
+                    <Directory />
+                </div>
+            </Fragment>
+        )
+    }
 }
 
 

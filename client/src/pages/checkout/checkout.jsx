@@ -5,16 +5,11 @@ import { createStructuredSelector } from "reselect"
 import selectCartItems from "../../redux/cart/selectors/cart-items.selector.js"
 import cartTotal from "../../redux/cart/selectors/cart-total.selector.js"
 import StripeCheckoutButton from "../../components/stripe-button/stripe-button.jsx"
-import hideFooter from '../../redux/footer/actions/toggleFooter.js';
 
 import "./checkout.scss"
 import CheckOutItem from "../../components/checkout-item/checkout-item.jsx";
 
 class CheckOut extends Component {
-
-    componentDidMount() {
-        this.props.hideFooter()
-    }
 
     render() {
         return (
@@ -58,8 +53,4 @@ const mapStateToProps = createStructuredSelector({
     total: cartTotal
 })
 
-const mapDispatchToProps = (dispatch) => ({
-    hideFooter: () => dispatch(hideFooter()),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CheckOut);
+export default connect(mapStateToProps)(CheckOut);

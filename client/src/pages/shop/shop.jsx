@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 
 import { fetchCollectionsStart } from "../../redux/shop/shop.actions.js"
 import Spinner from '../../components/spinner/spinner.jsx';
+import toggleCartHidden from '../../redux/cart/cart.actions/toggleCartHidden.js';
 
 const CollectionsOverviewContainer = lazy(() => import("../../components/collections-overview/collections-overview.container.jsx"))
 const CollectionsPageContainer = lazy(() => import("../../pages/collection/collection.container.jsx"))
@@ -38,7 +39,8 @@ const Shop = ({ fetchCollectionsStart, match }) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
+    fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
+    toggleCartHidden: () => dispatch(toggleCartHidden())
 })
 
 export default connect(null, mapDispatchToProps)(Shop);

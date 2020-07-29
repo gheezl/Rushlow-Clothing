@@ -9,7 +9,8 @@ const CollectionPreview = ({ title, items, history }) => {
     return (
         <Fragment>
             <div className="collection-preview">
-                <h1 onClick={() => history.push(`/shop/${title.toLowerCase()}`)} className='title'>{title.toUpperCase()}</h1>
+                <h1 onClick={() => history.push(`/shop/${title.toLowerCase()}`)}
+                    className='title'>{title.toUpperCase()}</h1>
                 <div className='preview'>
                     {items
                         .filter((item, idx) => idx < 4)

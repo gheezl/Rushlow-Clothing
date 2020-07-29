@@ -8,7 +8,6 @@ import './App.scss';
 import Spinner from "./components/spinner/spinner.jsx"
 import ErrorBoundary from "./components/error-boundary/error-boundary.jsx"
 
-import selectHidden from "./redux/footer/selectors/footer-hidden.selector.js"
 import selectCurrentUser from "./redux/user/user.selectors"
 
 import { checkUserSession } from "./redux/user/user.actions.js"
@@ -22,7 +21,7 @@ const CheckOut = lazy(() => import("./pages/checkout/checkout.jsx"))
 
 
 
-const App = ({ checkUserSession, currentUser, footerHidden }) => {
+const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
     checkUserSession()
   }, [checkUserSession])
@@ -55,7 +54,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  footerHidden: selectHidden,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

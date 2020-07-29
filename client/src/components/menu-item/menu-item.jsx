@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { withRouter } from "react-router-dom"
 import "./menu-item.scss"
 
-
 const MenuItem = ({ title, image, size, history, linkUrl }) => {
     return (
         <Fragment>

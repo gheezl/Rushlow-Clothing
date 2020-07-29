@@ -9,8 +9,6 @@ import CartIcon from "../cart-icon/cart-icon.jsx"
 import CartDropdown from "../cart-dropdown/cart-dropdown.jsx"
 import selectCartHidden from "../../redux/cart/selectors/hidden.selector.js"
 import selectCurrentUser from "../../redux/user/user.selectors.js"
-import displayFooter from "../../redux/footer/actions/displayFooter.js"
-import hideFooter from '../../redux/footer/actions/toggleFooter.js';
 
 import { SignOutStart } from "../../redux/user/user.actions.js"
 
@@ -18,18 +16,18 @@ import "./header.scss";
 
 
 
-const Header = ({ currentUser, cart, hideFooter, displayFooter, SignOutStart }) => {
+const Header = ({ currentUser, cart, hideFooter, SignOutStart }) => {
     return (
         <Fragment>
             <div className="header" >
-                <Link onClick={displayFooter} className="logo-container" to="/">
+                <Link className="logo-container" to="/">
                     <Logo className="logo" />
                 </Link>
                 <div className="options" >
-                    <Link onClick={displayFooter} className="option" to="/shop" >
+                    <Link className="option" to="/shop" >
                         SHOP
                     </Link>
-                    <Link onClick={displayFooter} className="option" to="/shop" >
+                    <Link className="option" to="/shop" >
                         CONTACT
                     </Link>
                     {
@@ -60,8 +58,6 @@ const mapStateToProps = createStructuredSelector({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    hideFooter: () => dispatch(hideFooter()),
-    displayFooter: () => dispatch(displayFooter()),
     SignOutStart: () => dispatch(SignOutStart())
 })
 
