@@ -9,13 +9,13 @@ const Footer = () => {
                 <div className="links">
                     <a href="https://angel.co/u/jacob-rushlow"
                     >
-                        <img src="angellist.png" className="angel-list-link" />
+                        <img alt="angellist" src="angellist.png" className="angel-list-link" />
                     </a>
                     <a href="https://github.com/gheezl">
-                        <img src="github.png" className="github-link" />
+                        <img alt="github" src="github.png" className="github-link" />
                     </a>
                     <a href="https://www.linkedin.com/in/jacob-rushlow-224a581ab/">
-                        <img src="linkedin.png" className="linkedin-link" />
+                        <img alt="linkedin" src="linkedin.png" className="linkedin-link" />
                     </a>
                 </div>
                 <div className="made-with">
