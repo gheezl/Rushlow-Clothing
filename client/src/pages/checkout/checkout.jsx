@@ -10,7 +10,6 @@ import "./checkout.scss"
 import CheckOutItem from "../../components/checkout-item/checkout-item.jsx";
 
 const CheckOut = ({ cartItems, total }) => {
-    console.log(cartItems, total)
     return (
         <Fragment>
             <div className="checkout-page">
