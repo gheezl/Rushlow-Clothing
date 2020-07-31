@@ -12,6 +12,8 @@ import selectCurrentUser from "./redux/user/user.selectors"
 
 import { checkUserSession } from "./redux/user/user.actions.js"
 
+import cartTotal from "./redux/cart/selectors/cart-total.selector.js"
+
 const HomePage = lazy(() => import("./pages/homepage/homepage.jsx"))
 const Shop = lazy(() => import("./pages/shop/shop.jsx"))
 const Header = lazy(() => import("./components/header/header.jsx"))
