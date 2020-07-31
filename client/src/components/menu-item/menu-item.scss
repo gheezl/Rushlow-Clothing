@@ -12,14 +12,7 @@
   transition: opacity 1s;
 
   &:hover {
-    opacity: 0.85;
     cursor: pointer;
-  }
-
-  &.content {
-    transform: scale(1.25);
-    transition: transform 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-    opacity: 1;
   }
 
   &.large {
@@ -45,6 +38,11 @@
     background-color: white;
     opacity: 0.5;
     position: absolute;
+
+    &:hover {
+      opacity: 0.85;
+      cursor: pointer;
+    }
 
     .title {
       font-weight: bold;
