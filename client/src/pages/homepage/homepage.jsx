@@ -5,19 +5,17 @@ import WithFooter from "../../components/footer/withFooter.jsx"
 
 import "./homepage.scss"
 
-class HomePage extends Component {
-
-    render() {
-        return (
-            <Fragment>
-                <div className="homepage">
-                    <h1 className="name" >CRWN CLOTHING</h1>
-                    <Directory />
-                </div>
-            </Fragment>
-        )
-    }
+const HomePage = () => {
+    return (
+        <Fragment>
+            <div className="homepage">
+                <h1 className="name" >CRWN CLOTHING</h1>
+                <Directory />
+            </div>
+        </Fragment>
+    )
 }
+
 
 
 
