@@ -8,39 +8,39 @@
         .angel-list-link {
             width: 20px;
             height: 20px;
-            opacity: 100%;
+            opacity: 1;
             transition: opacity 1s;
             margin-right: 10px;
             margin-left: 10px;
 
             &:hover {
-                opacity: 50%;
+                opacity: 0.5;
             }
         }
 
         .github-link {
             width: 20px;
             height: 20px;
-            opacity: 100%;
+            opacity: 1;
             transition: opacity 1s;
             margin-left: 10px;
             margin-right: 10px;
 
             &:hover {
-                opacity: 50%;
+                opacity: 0.5;
             }
         }
 
         .linkedin-link {
             width: 20px;
             height: 20px;
-            opacity: 100%;
+            opacity: 1;
             transition: opacity 1s;
             margin-left: 10px;
             margin-right: 10px;
             
             &:hover {
-                opacity: 50%;
+                opacity: 0.5;
             }
         }
     }
