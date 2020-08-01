@@ -39,6 +39,7 @@ const CheckOut = ({ cartItems, total }) => {
                         </div>
                 <div className="stripe">
                     <StripeCheckoutButton />
+                    stripe
                 </div>
             </div>
         </Fragment>
